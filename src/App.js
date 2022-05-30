@@ -1,6 +1,7 @@
 import './App.css';
-import BodyPartSelector from './components/bodyPartSelector';
 import React, { useState } from "react";
+
+import BodyPartSelector from './components/bodyPartSelector';
 
 function App() {
   const [selectedBodyParts, updateSelectedBodyParts] = useState({}); 
