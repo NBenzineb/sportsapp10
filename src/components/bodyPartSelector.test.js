@@ -10,14 +10,14 @@ test('invites the user to choose their workout', () => {
 test('user can select a body part', () => {
   let spy = jest.fn();
   render(<BodyPartSelector updateSelected={spy}/>);
-  const checkbox = screen.getByLabelText("Upper Body", "Lower Body, Full Body");
+  const checkbox = screen.getByLabelText("Upper Body");
   fireEvent.click(checkbox);
   console.log(spy.mock.calls);
   expect(spy.mock.calls.length).toEqual(1);
   expect(spy.mock.calls[0][0]).toEqual({"upperBody" : true});
   //expect(text).toBeInTheDocument();
   // send data to App.js
-});
+ });
 
 // test('user can deselect body part', () => {
 //   let spy = jest.fn();
