@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
       <p>{JSON.stringify(selectedBodyParts)}</p>
-      <WorkoutList/>
+      <WorkoutList selected={selectedBodyParts}/>
     </div>
   );
 }
