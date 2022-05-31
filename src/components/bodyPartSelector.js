@@ -7,7 +7,7 @@ function BodyPartSelector({updateSelected}) {
   const upperBodyClickHandler = () => {
     updateSelected({upperBody: !isChecked});
     setIsChecked(!isChecked);
-    
+    console.log(updateSelected);
   }
   const lowerBodyClickHandler = () => {
     updateSelected({lowerBody: !isChecked});
@@ -28,6 +28,7 @@ function BodyPartSelector({updateSelected}) {
         <label htmlFor="lower_body"> Lower Body</label>
         <input type="checkbox" id="full_body" name="full_body" value="full_body" onChange={fullBodyClickHandler}/>
         <label htmlFor="full_body"> Full Body</label>
+        
       </ul>
     </div>
   );
