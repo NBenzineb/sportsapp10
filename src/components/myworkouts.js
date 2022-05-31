@@ -5,7 +5,8 @@ export default class Myworkouts extends Component {
   render() {
     return (
       <div>
-        <p>You are on the Exercises List component!</p>
+        <h2>My workouts:</h2>
+        <p>Your recent completed workouts</p>
       </div>
     )
   }
