@@ -15,16 +15,16 @@ function App() {
     <div className="App">
       <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" exact component={Myworkouts} />
+        <Routes>
+          <Route path="/" exact component={Myworkouts} />
         <Route path="/allworkouts" component={BodyPartSelector} />
         <Route path="/myworkouts" component={Myworkouts} />
         <Route path="/signin" component={Myworkouts} />
         <Route path="/sign-up" component={Myworkouts} />
       </Routes>
     </Router>
-    <BodyPartSelector selected={updateSelectedBodyParts}/>
-  <p>{JSON.stringify(selectedBodyParts)}</p>
+    <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
+    <p>{JSON.stringify(selectedBodyParts)}</p>
       <WorkoutList selected={selectedBodyParts}/>
     </div>
   );
