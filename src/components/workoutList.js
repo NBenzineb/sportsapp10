@@ -6,7 +6,6 @@ import WorkoutCard from './workoutCard.js'
 
 
 function WorkoutList(props) {
-  console.log(props);
   if (props.selected.upperBody === true) {
     let workouts = upperBody 
     return (
