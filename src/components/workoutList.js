@@ -1,7 +1,4 @@
 import React from "react";
-import upperBody from './workouts/upperbody.json' 
-import lowerBody from './workouts/lowerbody.json' 
-import fullBody from './workouts/fullbody.json'
 import WorkoutCard from './workoutCard.js'
 
 
