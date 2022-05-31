@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar"
 import BodyPartSelector from './components/bodyPartSelector';
 import Myworkouts from "./components/myworkouts";
+import WorkoutList from './components/workoutList';
 
 
 function App() {
@@ -22,10 +23,9 @@ function App() {
         <Route path="/sign-up" component={Myworkouts} />
       </Routes>
     </Router>
-    <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
+    <BodyPartSelector selected={updateSelectedBodyParts}/>
   <p>{JSON.stringify(selectedBodyParts)}</p>
-  
-   
+      <WorkoutList selected={selectedBodyParts}/>
     </div>
   );
 }
