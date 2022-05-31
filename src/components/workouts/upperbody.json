@@ -1,0 +1,28 @@
+[
+  {
+    "workoutName": "Chest & Abs",
+    "workoutLogo": "./upper.png",
+    "exercises": [
+      "Warm-Up: 50 x Star Jumps",
+      "3 Sets of:",
+      "   10 x Diamond Press-Ups",
+      "   5 x V-Sits",
+      "   20 x Kettlebell Swings",
+      "   5 x Chin-Ups",
+      "Cool-Down: 5 Minutes Jog"
+    ]
+  },
+  {
+    "workoutName": "Dream Arms",
+    "workoutLogo": "./upper.png",
+    "exercises": [
+      "Warm-Up: 5 Minutes Skipping",
+      "5 Sets of:",
+      "   10 x Bicep Curls",
+      "   10 x Tricep Curls",
+      "   10 x Lateral Raises",
+      "   10 x Dips",
+      "Cool-Down: 10 x Quiet Burpees"
+    ]
+  }
+]
