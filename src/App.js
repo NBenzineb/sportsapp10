@@ -14,14 +14,15 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact component={Myworkouts} />
-        <Route path="/about" component={Myworkouts} />
-        <Route path="/contact" component={Myworkouts} />
+        <Route path="/allworkouts" component={Myworkouts} />
+        <Route path="/myworkouts" component={Myworkouts} />
         <Route path="/signin" component={Myworkouts} />
         <Route path="/sign-up" component={Myworkouts} />
       </Routes>
     </Router>
       <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
       <p>{JSON.stringify(selectedBodyParts)}</p>
+      
       
     
     </div>
