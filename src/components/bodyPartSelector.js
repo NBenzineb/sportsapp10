@@ -1,8 +1,9 @@
+import { render } from "@testing-library/react";
 import React, { useState } from "react";
 
 function BodyPartSelector({updateSelected}) {
   const [isChecked, setIsChecked] = useState(false);
-  
+
   const upperBodyClickHandler = () => {
     updateSelected({upperBody: !isChecked});
     setIsChecked(!isChecked);
@@ -30,6 +31,8 @@ function BodyPartSelector({updateSelected}) {
       </ul>
     </div>
   );
+
+
 }
 
 export default BodyPartSelector;
