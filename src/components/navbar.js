@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import tslogo from '../styles/tslogo.png';
+import tslogo from '../styles/tslogo.png'   
+import "../styles/navbar.css"; 
 
 import {
   Nav,
@@ -16,7 +17,7 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                <input class="logo" type="image" src="../styles/tslogo.png"></input>
+                {/* <img src={tslogo} /> */}
             </NavLogo>
             <Bars />
 

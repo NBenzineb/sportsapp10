@@ -12,8 +12,9 @@ export const Nav = styled.nav`
     z-index: 12;
 `;
 export const NavLogo = styled(Link)`
-
+  width: 200px;
 `;
+
 
 export const NavLink = styled(Link)`
 color: #fff;
