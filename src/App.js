@@ -7,6 +7,7 @@ import Myworkouts from "./components/myworkouts";
 import WorkoutList from './components/workoutList';
 import Login from './components/login';
 import SignUp from './components/signup';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
 function App() {
