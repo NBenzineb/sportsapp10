@@ -5,6 +5,8 @@ import Navbar from "./components/navbar"
 import BodyPartSelector from './components/bodyPartSelector';
 import Myworkouts from "./components/myworkouts";
 import WorkoutList from './components/workoutList';
+import Login from './components/login';
+import SignUp from './components/signup';
 
 
 function App() {
@@ -19,8 +21,8 @@ function App() {
           <Route path="/" exact component={Myworkouts} />
           <Route path="/allworkouts" component={BodyPartSelector} />
           <Route path="/myworkouts" element={<Myworkouts/>} />
-          <Route path="/signin" element={<Myworkouts/>} />
-          <Route path="/sign-up" element={<Myworkouts/>} />
+          <Route path="/signin" element={<Login/>} />
+          <Route path="/sign-up" element={<SignUp/>} />
         </Routes>
       </Router>
       <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
