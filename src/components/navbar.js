@@ -17,7 +17,7 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                {/* <img src={tslogo} /> */}
+                <img src={tslogo} width={200} height={95} />
             </NavLogo>
             <Bars />
 
