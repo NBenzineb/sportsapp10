@@ -5,12 +5,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4567;
 
 app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
+console.log(uri);
 mongoose.connect(uri, { useNewUrlParser: true}
 );
 const connection = mongoose.connection;
