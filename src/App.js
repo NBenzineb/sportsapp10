@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from "./components/navbar"
 
-import Myworkouts from "./components/myworkouts";
-import Workouts from "./components/workouts";
+import Myworkouts from './components/myworkouts';
+import Workouts from './components/workouts';
 import Login from './components/login';
 import SignUp from './components/signup';
 
