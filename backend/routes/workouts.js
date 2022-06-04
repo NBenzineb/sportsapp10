@@ -90,6 +90,7 @@ let data = ([
   ])
 
 router.route('/').get((req, res) => {
+  console.log(req.body)
   let upper = data.filter(entry => entry.bodypart === "upper");
   res.json(upper);
   // Workout.find({bodypart: `${req.params.bodypart}`})
