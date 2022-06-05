@@ -13,12 +13,16 @@ export const Nav = styled.nav`
 `;
 export const NavLogo = styled(Link)`
   top: 100px;
-  width: 150px;
+  width: 350px;
   height: 93px
   display: flex;
   align-items: center;
-  margin-left: -130px;
-  position: sticky
+  margin-left: -250px;
+  postion: sticky;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 
