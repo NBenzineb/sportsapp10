@@ -21,8 +21,9 @@ function App() {
     <div className="App">
       <Router>
       <Navbar />
+      <div className="container">
         <Routes>
-          <Route path="/" exact component={Myworkouts} />
+          {/* <Route path="/" exact component={Myworkouts} /> */}
           <Route path="/workouts" element={<Workouts/>} />
           <Route path="/myworkouts" element={<Myworkouts/>} />
           <Route path="/signin" element={<Myworkouts/>} />
@@ -32,6 +33,7 @@ function App() {
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
         </Routes>
+        </div>
       </Router>
     </div>
   );
