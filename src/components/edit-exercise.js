@@ -23,7 +23,7 @@ export default class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4567/exercises/'+this.props.match.params.id)
+    axios.get('http://localhost:4567/exercises/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -89,7 +89,7 @@ export default class EditExercise extends Component {
     axios.post('http://localhost:4567/exercises/update/' + this.props.match.params.id, exercise)
       .then(res => console.log(res.data));
 
-    window.location = '/';
+    window.location = '/log/';
   }
 
   render() {
