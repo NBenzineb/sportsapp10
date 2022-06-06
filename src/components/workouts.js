@@ -10,7 +10,6 @@ function Workouts() {
     return (
     <div>
       <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
-      <p>{JSON.stringify(selectedBodyParts.bodyParts)}</p>
       <WorkoutList selected={selectedBodyParts.bodyParts}/>
     </div>
 
