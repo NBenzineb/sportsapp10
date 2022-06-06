@@ -8,6 +8,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Myworkouts from "./components/myworkouts";
 import Workouts from "./components/workouts";
 
+
+import Login from './components/login';
+import SignUp from './components/signup';
+
+
 import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
 import CreateExercise from "./components/create-exercise";

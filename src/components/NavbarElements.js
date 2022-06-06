@@ -12,7 +12,17 @@ export const Nav = styled.nav`
     z-index: 12;
 `;
 export const NavLogo = styled(Link)`
-  width: 200px;
+  top: 100px;
+  width: 350px;
+  height: 93px
+  display: flex;
+  align-items: center;
+  margin-left: -250px;
+  postion: sticky;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 
