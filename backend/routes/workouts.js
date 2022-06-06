@@ -98,7 +98,8 @@ let Workout = require('../models/workout');
   //   .catch(err => res.status(400).json('Error: ' + err));
 
 router.route('/').get((req, res) => {
-  Workout.find({bodypart: `${req.params.bodypart}`})
+  Workout.find()
+    // {bodypart: `${req.params.bodypart}`}
     .then(workouts => res.json(workouts))
     .catch(err => res.status(400).json('Error: ' + err));
 });
