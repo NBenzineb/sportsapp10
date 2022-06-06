@@ -6,12 +6,12 @@ import BodyPartSelector from './bodyPartSelector';
 import WorkoutList from './workoutList';
 
 function Workouts() {
-  const [selectedBodyParts, updateSelectedBodyParts] = useState({upperBody: false, lowerBody: false, fullBody: false}); 
+  const [selectedBodyParts, updateSelectedBodyParts] = useState({"upperBody": false, "lowerBody": false, "fullBody": false}); 
     return (
     <div>
       <BodyPartSelector updateSelected={updateSelectedBodyParts}/>
-      <p>{JSON.stringify(selectedBodyParts)}</p>
-      <WorkoutList selected={selectedBodyParts}/>
+      <p>{JSON.stringify(selectedBodyParts.bodyParts)}</p>
+      <WorkoutList selected={selectedBodyParts.bodyParts}/>
     </div>
 
 )

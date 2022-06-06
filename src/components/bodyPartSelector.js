@@ -13,7 +13,7 @@ function BodyPartSelector({updateSelected}) {
     isChecked[bodyPart] = !previousValue;
     console.log(isChecked);
     setIsChecked(isChecked);
-    updateSelected(isChecked);
+    updateSelected({bodyParts: isChecked});
   }
 
   return (
