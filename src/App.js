@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Myworkouts from "./components/myworkouts";
 import Workouts from "./components/workouts";
-
+import Homepage from './components/homepage';
 
 import Login from './components/login';
 import SignUp from './components/signup';
@@ -32,11 +32,12 @@ function App() {
           <Route path="/workouts" element={<Workouts/>} />
           <Route path="/myworkouts" element={<Myworkouts/>} />
           <Route path="/signin" element={<Myworkouts/>} />
-          <Route path="/sign-up" element={<Myworkouts/>} />
-          <Route path="/" element={<ExercisesList/>} />
+          <Route path="/sign-up" element={<Myworkouts/>} />   
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
+          <Route path="/log" element={<ExercisesList/>} />
+          <Route path="/" element={<Homepage/>} />
         </Routes>
         </div>
       </Router>
