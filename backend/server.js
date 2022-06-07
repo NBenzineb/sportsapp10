@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const passport = require("passport");
+
 
 require('dotenv').config();
 
@@ -9,6 +11,11 @@ const port = process.env.PORT || 4567;
 
 app.use(cors());
 app.use(express.json());
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
 
 const uri = process.env.ATLAS_URI;
 console.log(uri);

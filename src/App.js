@@ -31,7 +31,7 @@ function App() {
           {/* <Route path="/" exact component={Myworkouts} /> */}
           <Route path="/workouts" element={<Workouts/>} />
           <Route path="/myworkouts" element={<Myworkouts/>} />
-          <Route path="/signin" element={<Myworkouts/>} />
+          <Route path="/signin" element={<Login/>} />
           <Route path="/sign-up" element={<Myworkouts/>} />
           <Route path="/" element={<ExercisesList/>} />
           <Route path="/edit/:id" element={<EditExercise/>} />
