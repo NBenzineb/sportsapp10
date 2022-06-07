@@ -1,6 +1,6 @@
 import './App.css';
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import React, { useState, Component } from "react";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from "./components/navbar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import jwt_decode from "jwt-decode";
@@ -46,7 +46,8 @@ if (localStorage.jwtToken) {
   }
 }
 
-function App() {
+class App extends Component {
+  render() {
  
   return (
     <div className="App">
@@ -57,22 +58,23 @@ function App() {
       <Navbar />
       <div className="container">
         
-          <Route exact path="/workouts" element={<Workouts/>} />
-          <Route exact path="/myworkouts" element={<Myworkouts/>} />
-          <Route exact path="/signin" element={<Login/>} />
-          <Route exact path="/sign-up" element={<Myworkouts/>} />
-          <Route exact path="/" element={<ExercisesList/>} />
-          <Route exact path="/edit/:id" element={<EditExercise/>} />
-          <Route exact path="/create" element={<CreateExercise/>} />
-          <Route exact path="/user" element={<CreateUser/>} />
-          <Switch>
+          <Route exact path="/workouts" component={<Workouts/>} />
+          <Route exact path="/myworkouts" component={<Myworkouts/>} />
+          <Route exact path="/signin" component={<Login/>} />
+          <Route exact path="/sign-up" component={<Myworkouts/>} />
+          <Route exact path="/" component={<ExercisesList/>} />
+          <Route exact path="/edit/:id" component={<EditExercise/>} />
+          <Route exact path="/create" component={<CreateExercise/>} />
+          <Route exact path="/user" component={<CreateUser/>} />
+          <Routes>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+          </Routes>
         </div>
       </Router>
       </Provider>
     </div>
   );
+}
 }
 
 export default App;
