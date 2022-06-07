@@ -17,7 +17,7 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                <img src={tslogo} width={350} height={93} alt="" />
+                <img src={tslogo} width={350} height={93} alt="" to={"/"} />
             </NavLogo>
             <Bars />
 
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <NavLink to="/workouts"  activeStyle={{ color: 'blue' }}>All Workouts</NavLink>
                 <NavLink to="/myworkouts" activeStyle={{ color: 'black' }} >My Workouts </NavLink>
                 <NavLink to="/signin"  activeStyle={{ color: 'black' }}> Sign In</NavLink>
-                <NavLink to="/"  className="nav-link" activeStyle={{ color: 'black' }}> Exercises</NavLink>
+                <NavLink to="/log"  className="nav-link" activeStyle={{ color: 'black' }}> Exercises</NavLink>
                 <NavLink to="/create"  className="nav-link" activeStyle={{ color: 'black' }}> Create Exercise Log</NavLink>
                 <NavLink to="/user"  className="nav-link" activeStyle={{ color: 'black' }}> Create User</NavLink>
                 <NavBtn> <NavBtnLink to="/sign-up">Sign Up</NavBtnLink> </NavBtn>
