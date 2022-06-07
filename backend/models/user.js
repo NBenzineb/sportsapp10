@@ -11,6 +11,23 @@ const userSchema = new Schema({
     trim: true,
     minlength: 3
   },
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  
+  date: {
+    type: Date,
+    default: Date.now
+  }
 }, {
   timestamps: true,
 });
