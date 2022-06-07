@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class CreateUser extends Component {
@@ -17,9 +18,15 @@ export default class CreateUser extends Component {
       name: '',
       email: '',
       password: '',
-      password2: ''
+      password2: '',
+      errors: {}
     }
   }
+
+  // onChange = e => {
+  //   this.setState({ [e.target.id]: e.target.value });
+  // };
+
 
   onChangeUsername(e) {
     this.setState({
@@ -79,16 +86,23 @@ export default class CreateUser extends Component {
   }
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div>
         <h3>Create New User</h3>
-        <form onSubmit={this.onSubmit}>
+        <p className="grey-text text-darken-1">
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+        <form noValidate onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label>Username: </label>
             <input  type="text"
                 required
                 className="form-control"
                 value={this.state.username}
+                error={errors.username}
+                id="username"
                 onChange={this.onChangeUsername}
                 />
                 <label>Name: </label>
@@ -96,6 +110,8 @@ export default class CreateUser extends Component {
                 required
                 className="form-control"
                 value={this.state.name}
+                error={errors.name}
+                id="name"
                 onChange={this.onChangeName}
                 />
                  <label>Email: </label>
@@ -103,6 +119,8 @@ export default class CreateUser extends Component {
                 required
                 className="form-control"
                 value={this.state.email}
+                error={errors.email}
+                id="email"
                 onChange={this.onChangeEmail}
                 />
                   <label>Password: </label>
@@ -110,6 +128,8 @@ export default class CreateUser extends Component {
                 required
                 className="form-control"
                 value={this.state.password}
+                error={errors.password}
+                id="password"
                 onChange={this.onChangePassword}
                 />
                  <label>Confirm password: </label>
@@ -117,8 +137,9 @@ export default class CreateUser extends Component {
                 required
                 className="form-control"
                 value={this.state.password2}
+                error={errors.password2}
+                id="password2"
                 onChange={this.onChangePassword2}
-// Make this work
                 />
 
           </div>

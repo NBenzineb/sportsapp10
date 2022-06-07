@@ -1,8 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 export default class Login extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      errors: {}
+    };
+  }
+
+  onChangeEmail(e) {
+    this.setState({
+      email: e.target.value
+    })
+  }
+
+  onChangePassword(e) {
+    this.setState({
+      password: e.target.value
+    })
+  }
+
+  onSubmit = e => {
+    e.preventDefault();
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(userData);
+  };
+render() {
+    const { errors } = this.state;
     return (
-      <form>
+      <form noValidate onSubmit={this.onSubmit}>
+        <p className="grey-text text-darken-1">
+                Don't have an account? <Link to="/user">Register</Link>
+                </p>
         <h3>Sign In</h3>
         <div className="mb-3">
           <label>Email address</label>
@@ -10,6 +45,8 @@ export default class Login extends Component {
             type="email"
             className="form-control"
             placeholder="Enter email"
+            error={errors.email}
+            id="email"
           />
         </div>
         <div className="mb-3">
@@ -18,6 +55,8 @@ export default class Login extends Component {
             type="password"
             className="form-control"
             placeholder="Enter password"
+            error={errors.password}
+            id="password"
           />
         </div>
         <div className="mb-3">
