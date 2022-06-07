@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { registerUser } from "../actions/authActions";
+import classnames from "classnames";
 
-export default class CreateUser extends Component {
+ class CreateUser extends Component {
   constructor(props) {
     super(props);
+    
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
@@ -20,6 +25,21 @@ export default class CreateUser extends Component {
       password: '',
       password2: '',
       errors: {}
+    }
+  }
+
+  componentDidMount() {
+    // If logged in and user navigates to Register page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
     }
   }
 
@@ -83,7 +103,11 @@ export default class CreateUser extends Component {
       password2: ''
 
     })
-  }
+  
+
+  this.props.registerUser(user, this.props.history); 
+  };
+
 
   render() {
     const { errors } = this.state;
@@ -97,49 +121,69 @@ export default class CreateUser extends Component {
         <form noValidate onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label>Username: </label>
+            <span className="red-text">{errors.username}</span>
             <input  type="text"
                 required
-                className="form-control"
+                // className="form-control"
                 value={this.state.username}
                 error={errors.username}
                 id="username"
                 onChange={this.onChangeUsername}
+                className={classnames("", {
+                  invalid: errors.username
+                })}
                 />
                 <label>Name: </label>
+                <span className="red-text">{errors.name}</span>
               <input  type="text"
                 required
-                className="form-control"
+                // className="form-control"
                 value={this.state.name}
                 error={errors.name}
                 id="name"
                 onChange={this.onChangeName}
+                className={classnames("", {
+                  invalid: errors.name
+                })}
                 />
                  <label>Email: </label>
+                 <span className="red-text">{errors.email}</span>
               <input  type="text"
                 required
-                className="form-control"
+                // className="form-control"
                 value={this.state.email}
                 error={errors.email}
                 id="email"
                 onChange={this.onChangeEmail}
+                className={classnames("", {
+                  invalid: errors.email
+                })}
                 />
                   <label>Password: </label>
+                  <span className="red-text">{errors.password}</span>
               <input  type="text"
                 required
-                className="form-control"
+                // className="form-control"
                 value={this.state.password}
                 error={errors.password}
                 id="password"
                 onChange={this.onChangePassword}
+                className={classnames("", {
+                  invalid: errors.password
+                })}
                 />
                  <label>Confirm password: </label>
+                 <span className="red-text">{errors.password2}</span>
               <input  type="text"
                 required
-                className="form-control"
+                // className="form-control"
                 value={this.state.password2}
                 error={errors.password2}
                 id="password2"
                 onChange={this.onChangePassword2}
+                className={classnames("", {
+                  invalid: errors.password2
+                })}
                 />
 
           </div>
@@ -152,3 +196,19 @@ export default class CreateUser extends Component {
     )
   }
 }
+
+CreateUser.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(CreateUser));
+
+// maybe

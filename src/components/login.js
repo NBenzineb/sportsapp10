@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-export default class Login extends Component {
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../actions/authActions";
+import classnames from "classnames";
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,6 +12,23 @@ export default class Login extends Component {
       password: "",
       errors: {}
     };
+  }
+
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard"); // push user to dashboard when they login
+    }
+if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
   onChangeEmail(e) {
@@ -25,12 +45,14 @@ export default class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const userData = {
+const userData = {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(userData);
+this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
   };
+
+  
 render() {
     const { errors } = this.state;
     return (
@@ -41,22 +63,36 @@ render() {
         <h3>Sign In</h3>
         <div className="mb-3">
           <label>Email address</label>
+          <span className="red-text">
+                  {errors.email}
+                  {errors.emailnotfound}
+                </span>
           <input
             type="email"
-            className="form-control"
+            // className="form-control"
             placeholder="Enter email"
             error={errors.email}
             id="email"
+            className={classnames("", {
+              invalid: errors.email || errors.emailnotfound
+            })}
           />
         </div>
         <div className="mb-3">
           <label>Password</label>
+          <span className="red-text">
+                  {errors.password}
+                  {errors.passwordincorrect}
+                </span>
           <input
             type="password"
-            className="form-control"
+            // className="form-control"
             placeholder="Enter password"
             error={errors.password}
             id="password"
+            className={classnames("", {
+              invalid: errors.password || errors.passwordincorrect
+            })}
           />
         </div>
         <div className="mb-3">
@@ -83,3 +119,17 @@ render() {
     )
   }
 }
+
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
