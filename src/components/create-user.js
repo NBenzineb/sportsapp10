@@ -1,170 +1,77 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import axios from 'axios';
-import classnames from "classnames";
-
-export default class CreateUser extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
-    this.onChangePassword2 = this.onChangePassword2.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-
-    this.state = {
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      password2: '',
-      errors: {}
+import React , {useState} from 'react'
+import axios from "axios";
+const CreateUser = () => {
+    const [user,setUser] = useState({
+        username:"",
+        name:"",
+        email:"",
+        password: ""
+    })
+    const handleChange = e =>{
+    const {name,value} = e.target
+    setUser({
+    ...user,//spread operator 
+    [name]:value
+    })
     }
-  }
-
-  // onChange = e => {
-  //   this.setState({ [e.target.id]: e.target.value });
-  // };
-
-
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value
-    })
-  }
-
-  onChangeName(e) {
-    this.setState({
-      name: e.target.value
-    })
-  }
-
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    })
-  }
-
-  onChangePassword(e) {
-    this.setState({
-      password: e.target.value
-    })
-  }
-
-  onChangePassword2(e) {
-    this.setState({
-      password2: e.target.value
-    })
-  }
-
-
-  onSubmit(e) {
-    e.preventDefault();
-
-    const user = {
-      username: this.state.username,
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2
-    }
-
-    console.log(user);
-
-    axios.post('http://localhost:4567/users/add', user)
-      .then(res => console.log(res.data));
-
-    this.setState({
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      password2: ''
-
-    })
-  }
-
-  render() {
-    const { errors } = this.state;
-
+//register function 
+   const egister = ()=>{
+   const {username, name,email,password} = user
+   if (username && name && email && password){
+    axios.post("http://localhost:4567/user/add",user )
+    .then(res=>console.log(res))
+   }
+   else{
+       alert("invalid input")
+   };
     return (
-      <div>
-        <h3>Create New User</h3>
-        <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-        <form noValidate onSubmit={this.onSubmit}>
-          <div className="form-group"> 
-            <label>Username: </label>
-            <span className="red-text">{errors.username}</span>
-            <input  type="text"
-                required
-                value={this.state.username}
-                error={errors.username}
-                id="username"
-                onChange={this.onChangeUsername}
-                className={classnames("", {
-                  invalid: errors.username
-                })}
-                />
-                <label>Name: </label>
-                 <span className="red-text">{errors.name}</span>
-              <input  type="text"
-                required
-                className={classnames("", {
-                  invalid: errors.name
-                })}
-                value={this.state.name}
-                error={errors.name}
-                id="name"
-                onChange={this.onChangeName}
-                />
-                 <label>Email: </label>
-                 <span className="red-text">{errors.email}</span>
-              <input  type="text"
-                required
-                className={classnames("", {
-                  invalid: errors.email
-                })}
-                value={this.state.email}
-                error={errors.email}
-                id="email"
-                onChange={this.onChangeEmail}
-                />
-                  <label>Password: </label>
-                  <span className="red-text">{errors.password}</span>
-              <input  type="text"
-                required
-                className={classnames("", {
-                  invalid: errors.password
-                })}
-                value={this.state.password}
-                error={errors.password}
-                id="password"
-                onChange={this.onChangePassword}
-                />
-                 <label>Confirm password: </label>
-                 <span className="red-text">{errors.password2}</span>
-              <input  type="text"
-                required
-                className={classnames("", {
-                  invalid: errors.password2
-                })}
-                value={this.state.password2}
-                error={errors.password2}
-                id="password2"
-                onChange={this.onChangePassword2}
-                />
+        <>    
+<div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+    <div class="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
+        Create a new account
+    </div>
+    <span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
+        Already have an account ?
+        <a href="#" target="_blank" class="text-sm text-blue-500 underline hover:text-blue-700">
+            Sign in
+        </a>
+    </span>
+    <div class="p-6 mt-8">
+        <form action="#">
+        <div class="flex flex-col mb-2">
+                <div class=" relative ">
+                    <input type="text" id="create-account-pseudo1" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="name" value={user.username} onChange={handleChange} placeholder="Username"/>
+                    </div>
+                </div>
+            <div class="flex flex-col mb-2">
+                <div class=" relative ">
+                    <input type="text" id="create-account-pseudo" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="name" value={user.name} onChange={handleChange} placeholder="FullName"/>
+                    </div>
+                </div>
+                <div class="flex gap-4 mb-2">
+                    <div class=" relative ">
+                        <input type="text" id="create-account-first-name" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="email" value={user.email} onChange={handleChange} placeholder="Email"/>
+                        </div>
 
-          </div>
-          
-          <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
-          </div>
-        </form>
-      </div>
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <div class=" relative ">
+                                <input type="password" id="create-account-email" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="password" value={user.password} onChange={handleChange}    placeholder="password"/>
+                                </div>
+                            </div>
+                            <div class="flex w-full my-4">
+                                <button type="submit" class="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg " onClick={egister} >
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+
+
+                                                        </div>
+                                                    </div>
+
+        </>
     )
-  }
 }
+}
+export default CreateUser
