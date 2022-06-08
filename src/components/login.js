@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import axios from 'axios';
 
 export default class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
     this.state = {
       email: "",
       password: "",
@@ -25,12 +31,24 @@ export default class Login extends Component {
   }
 
   onSubmit = e => {
+    console.log("Hello checking 1");
     e.preventDefault();
     const userData = {
       email: this.state.email,
       password: this.state.password
     };
+    console.log("Hello checking");
     console.log(userData);
+
+    axios.post('http://localhost:4567/users/login', userData)
+      .then(res => console.log(res.data));
+
+    this.setState({
+      email: '',
+      password: '',
+      
+
+    })
   };
 render() {
     const { errors } = this.state;
@@ -54,6 +72,8 @@ render() {
             placeholder="Enter email"
             error={errors.email}
             id="email"
+            value={this.state.email}
+            onChange={this.onChangeEmail}
           />
         </div>
         <div className="mb-3">
@@ -70,6 +90,8 @@ render() {
             placeholder="Enter password"
             error={errors.password}
             id="password"
+            value={this.state.password}
+            onChange={this.onChangePassword}
           />
         </div>
         <div className="mb-3">
