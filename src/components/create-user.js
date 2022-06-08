@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import classnames from "classnames";
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -97,45 +98,60 @@ export default class CreateUser extends Component {
         <form noValidate onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label>Username: </label>
+            <span className="red-text">{errors.username}</span>
             <input  type="text"
                 required
-                className="form-control"
                 value={this.state.username}
                 error={errors.username}
                 id="username"
                 onChange={this.onChangeUsername}
+                className={classnames("", {
+                  invalid: errors.username
+                })}
                 />
                 <label>Name: </label>
+                 <span className="red-text">{errors.name}</span>
               <input  type="text"
                 required
-                className="form-control"
+                className={classnames("", {
+                  invalid: errors.name
+                })}
                 value={this.state.name}
                 error={errors.name}
                 id="name"
                 onChange={this.onChangeName}
                 />
                  <label>Email: </label>
+                 <span className="red-text">{errors.email}</span>
               <input  type="text"
                 required
-                className="form-control"
+                className={classnames("", {
+                  invalid: errors.email
+                })}
                 value={this.state.email}
                 error={errors.email}
                 id="email"
                 onChange={this.onChangeEmail}
                 />
                   <label>Password: </label>
+                  <span className="red-text">{errors.password}</span>
               <input  type="text"
                 required
-                className="form-control"
+                className={classnames("", {
+                  invalid: errors.password
+                })}
                 value={this.state.password}
                 error={errors.password}
                 id="password"
                 onChange={this.onChangePassword}
                 />
                  <label>Confirm password: </label>
+                 <span className="red-text">{errors.password2}</span>
               <input  type="text"
                 required
-                className="form-control"
+                className={classnames("", {
+                  invalid: errors.password2
+                })}
                 value={this.state.password2}
                 error={errors.password2}
                 id="password2"

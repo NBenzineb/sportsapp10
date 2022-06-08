@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import classnames from "classnames";
 
 export default class Login extends Component {
   constructor() {
@@ -41,9 +42,15 @@ render() {
         <h3>Sign In</h3>
         <div className="mb-3">
           <label>Email address</label>
+          <span className="red-text">
+                   {errors.email}
+                   {errors.emailnotfound}
+                 </span>
           <input
             type="email"
-            className="form-control"
+            className={classnames("", {
+              invalid: errors.email || errors.emailnotfound
+            })}
             placeholder="Enter email"
             error={errors.email}
             id="email"
@@ -51,9 +58,15 @@ render() {
         </div>
         <div className="mb-3">
           <label>Password</label>
+          <span className="red-text">
+                   {errors.password}
+                   {errors.passwordincorrect}
+                 </span>
           <input
             type="password"
-            className="form-control"
+            className={classnames("", {
+              invalid: errors.password || errors.passwordincorrect
+            })}
             placeholder="Enter password"
             error={errors.password}
             id="password"
