@@ -14,7 +14,7 @@ export const Nav = styled.nav`
 export const NavLogo = styled(Link)`
   top: 100px;
   width: 350px;
-  height: 93px
+  height: 92px
   display: flex;
   align-items: center;
   margin-left: -200px;

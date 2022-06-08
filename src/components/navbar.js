@@ -17,14 +17,14 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                <img src={tslogo} width={350} height={93} alt="" />
+                <img src={tslogo} width={350} height={93} alt="" to={"/"} />
             </NavLogo>
             <Bars />
 
             <NavMenu>
                 <NavLink to="/" activeStyle={{ color:'blue' }}> </NavLink>
                 <NavLink to="/workouts"  activeStyle={{ color: 'blue' }}>All Workouts</NavLink>
-                <NavLink to="/"  className="nav-link" activeStyle={{ color: 'black' }}> Exercises</NavLink>
+                <NavLink to="/log"  className="nav-link" activeStyle={{ color: 'black' }}> Exercises</NavLink>
                 <NavLink to="/create"  className="nav-link" activeStyle={{ color: 'black' }}> Create Exercise Log</NavLink>
                 <NavLink to="/signin"  activeStyle={{ color: 'black' }}> Sign In</NavLink>
                 <NavBtn> <NavBtnLink to="/user">Create User</NavBtnLink> </NavBtn>

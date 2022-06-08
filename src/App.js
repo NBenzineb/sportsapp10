@@ -5,6 +5,8 @@ import Navbar from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Workouts from "./components/workouts";
+import Homepage from './components/homepage';
+
 import Login from './components/login';
 import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
@@ -26,6 +28,8 @@ function App() {
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
+          <Route path="/log" element={<ExercisesList/>} />
+          <Route path="/" element={<Homepage/>} />
         </Routes>
         </div>
       </Router>
