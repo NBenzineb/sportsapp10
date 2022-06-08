@@ -29,8 +29,9 @@ router.route('/').get((req, res) => {
 //     .catch(err => res.status(400).json('Error: ' + err));
 // });
 
-router.post("/Login",(req,res)=>{
+router.post("/login",(req,res)=>{
   const {email,password} =req.body;
+  console.log(email)
   User.findone({email:email},(err,user)=>{
       if(user){
          if(password === user.password){

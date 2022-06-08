@@ -17,7 +17,7 @@ import CreateUser from "./components/create-user";
 
 function App() {
  
-  const [user,setLoginUser] = useState({
+  const [user, setLoginUser] = useState({
   })
   return (
     <div className="App">
@@ -29,10 +29,8 @@ function App() {
           {/* <Route path="/" exact component={Myworkouts} /> */}
           {/* <Route exact path="/workouts">
           {user && user._id ? <Workouts/>:<Login/> }<Workouts/></Route> */}
-          <Route path="/signin" element= {<Login/>} />
+          <Route path="/users/login" element= {<Login/>} />
           {/* <Route path="/workouts" element={<Workouts/>} /> */}
-          {/* <Route path="/signin" element={<Login/>} /> */}
-          <Route path="/" element={<ExercisesList/>} />
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
@@ -42,7 +40,7 @@ function App() {
         </div>
       </Router>
 
-      <Login setLoginUser={setLoginUser}/>
+      {/* <Login setLoginUser={setLoginUser}/> */}
 
     </div>
   );
