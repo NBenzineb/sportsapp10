@@ -29,10 +29,11 @@ function App() {
       <div className="container">
         <Routes>
           {/* <Route path="/" exact component={Myworkouts} /> */}
-          <Route path="/workouts" element={<Workouts/>} />
-          <Route path="/myworkouts" element={<Myworkouts/>} />
-          <Route path="/signin" element={<Myworkouts/>} />
-          <Route path="/sign-up" element={<Myworkouts/>} />   
+
+          {/* <Route exact path="/workouts">
+          {user && user._id ? <Workouts/>:<Login/> }<Workouts/></Route> */}
+          <Route path="/users/login" element= {<Login/>} />
+          <Route path="/workouts" element={<Workouts/>} /> 
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
