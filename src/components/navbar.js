@@ -24,9 +24,10 @@ const Navbar = () => {
             <NavMenu>
                 <NavLink to="/" activeStyle={{ color:'blue' }}> </NavLink>
                 <NavLink to="/workouts"  activeStyle={{ color: 'blue' }}>All Workouts</NavLink>
-                <NavLink to="/log"  className="nav-link" activeStyle={{ color: 'black' }}> Exercises</NavLink>
-                <NavLink to="/create"  className="nav-link" activeStyle={{ color: 'black' }}> Create Exercise Log</NavLink>
-                <NavLink to="/signin"  activeStyle={{ color: 'black' }}> Sign In</NavLink>
+                <NavLink to="/myworkouts" activeStyle={{ color: 'blue' }} >My Workouts </NavLink>
+                <NavLink to="/signin"  activeStyle={{ color: 'blue' }}> Sign In</NavLink>
+                <NavLink to="/log"  className="nav-link" activeStyle={{ color: 'blue' }}> Exercises</NavLink>
+                <NavLink to="/create"  className="nav-link" activeStyle={{ color: 'blue' }}> Create Exercise Log</NavLink>
                 <NavBtn> <NavBtnLink to="/user">Create User</NavBtnLink> </NavBtn>
             </NavMenu> 
            </Nav> 
