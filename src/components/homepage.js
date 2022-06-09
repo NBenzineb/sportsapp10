@@ -11,7 +11,7 @@ function Homepage() {
     <div className="body" smooth={true} duration={2000}> 
     <div id="pre-heading">
         <div className="pre-heading">
-        <h2></h2>
+        <h3>Think Sport <span> Think Motivation !</span> </h3> 
         </div>
     </div>
 </div>     
