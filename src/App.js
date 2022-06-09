@@ -30,7 +30,7 @@ function App() {
           {/* <Route exact path="/workouts">
           {user && user._id ? <Workouts/>:<Login/> }<Workouts/></Route> */}
           <Route path="/users/login" element= {<Login/>} />
-          {/* <Route path="/workouts" element={<Workouts/>} /> */}
+          <Route path="/workouts" element={<Workouts/>} /> 
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
