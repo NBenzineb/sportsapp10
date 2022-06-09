@@ -12,8 +12,6 @@ body{
     background-size: cover;
     background-image: url("../styles/banner.png");
     z-index: 0;
-
-
 }
 *{
     box-sizing: border-box;
