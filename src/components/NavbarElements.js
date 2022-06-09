@@ -17,7 +17,7 @@ export const NavLogo = styled(Link)`
   height: 92px
   display: flex;
   align-items: center;
-  margin-left: -200px;
+  margin-left: -250px;
   postion: sticky;
 
   @media screen and (max-width: 768px) {

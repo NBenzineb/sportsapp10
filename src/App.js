@@ -4,10 +4,15 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
+import Myworkouts from "./components/myworkouts";
 import Workouts from "./components/workouts";
 import Homepage from './components/homepage';
 
 import Login from './components/login';
+import SignUp from './components/signup';
+
+
 import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
 import CreateExercise from "./components/create-exercise";
@@ -17,20 +22,17 @@ import CreateUser from "./components/create-user";
 
 function App() {
  
-  const [user, setLoginUser] = useState({
-  })
   return (
     <div className="App">
       <Router>
-        
       <Navbar />
       <div className="container">
         <Routes>
           {/* <Route path="/" exact component={Myworkouts} /> */}
-          {/* <Route exact path="/workouts">
-          {user && user._id ? <Workouts/>:<Login/> }<Workouts/></Route> */}
-          <Route path="/users/login" element= {<Login/>} />
-          {/* <Route path="/workouts" element={<Workouts/>} /> */}
+          <Route path="/workouts" element={<Workouts/>} />
+          <Route path="/myworkouts" element={<Myworkouts/>} />
+          <Route path="/signin" element={<Myworkouts/>} />
+          <Route path="/sign-up" element={<Myworkouts/>} />   
           <Route path="/edit/:id" element={<EditExercise/>} />
           <Route path="/create" element={<CreateExercise/>} />
           <Route path="/user" element={<CreateUser/>} />
@@ -39,9 +41,6 @@ function App() {
         </Routes>
         </div>
       </Router>
-
-      {/* <Login setLoginUser={setLoginUser}/> */}
-
     </div>
   );
 }
