@@ -37,6 +37,7 @@ function App() {
           <Route path="/user" element={<CreateUser/>} />
           <Route path="/log" element={<ExercisesList/>} />
           <Route path="/" element={<Homepage/>} />
+        
         </Routes>
         </div>
       </Router>

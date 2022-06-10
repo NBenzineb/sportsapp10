@@ -27,7 +27,7 @@ const Navbar = () => {
                 <NavLink to="/log"  className="nav-link" activeStyle={{ color: 'blue' }}> Exercises</NavLink>
                 <NavLink to="/create"  className="nav-link" activeStyle={{ color: 'blue' }}> Create Exercise Log</NavLink>
 
-                <NavLink to="/signin"  activeStyle={{ color: 'blue' }}> Sign In</NavLink>
+                <NavLink to="/login"  activeStyle={{ color: 'blue' }}> Sign In</NavLink>
                 <NavBtn> <NavBtnLink to="/user">Create User</NavBtnLink> </NavBtn>
 
             </NavMenu> 

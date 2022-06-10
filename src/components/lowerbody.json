@@ -1,0 +1,28 @@
+[
+  {
+    "workoutName": "Booty Beautiful",
+    "workoutLogo": "./lower.png",
+    "exercises": [
+      "Warm-Up: 50 x Star Jumps",
+      "3 Sets of:",
+      "   10 x Sumo Squats",
+      "   5 x Squat Thrusters",
+      "   20 x Butterfly Kicks",
+      "   5 x Deadlifts",
+      "Cool-Down: 5 Minutes Jog"
+    ]
+  },
+  {
+    "workoutName": "uscious Legs",
+    "workoutLogo": "./lower.png",
+    "exercises": [
+      "Warm-Up: 5 Minutes Skipping",
+      "5 Sets of:",
+      "   10 x Calf Raises",
+      "   10 x Jump Lunges",
+      "   5 x Lateral Lunges (each side)",
+      "   5 x Single Leg Deadlifts (each side)",
+      "Cool-Down: 10 x Quiet Burpees"
+    ]
+  }
+]

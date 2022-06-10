@@ -1,0 +1,28 @@
+[
+  {
+    "workoutName": "Body Burner",
+    "workoutLogo": "./full.png",
+    "exercises": [
+      "Warm-Up: 50 x Star Jumps",
+      "3 Sets of:",
+      "   10 x Lunges (each side)",
+      "   5 x Inchworm Press-Ups",
+      "   20 x Mountain Climbers",
+      "   5 x Jump Squats",
+      "Cool-Down: 5 Minutes Jog"
+    ]
+  },
+  {
+    "workoutName": "Full Body Tone",
+    "workoutLogo": "./full.png",
+    "exercises": [
+      "Warm-Up: 5 Minutes Skipping",
+      "5 Sets of:",
+      "   10 x Crunches",
+      "   10 x Low Walk",
+      "   10 x Superman Crunches",
+      "   1 Minute Plank",
+      "Cool-Down: 10 x Quiet Burpees"
+    ]
+  }
+]
