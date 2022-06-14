@@ -1,3 +1,9 @@
+#Think Sport
+
+Google docs: https://docs.google.com/document/d/12vZUSnHxNi8YwPmmYw3JV2V4NOkAxjD-qqkHEIAyc-w/edit
+Trello: https://trello.com/b/eyJT1LWf/sports-app
+Miro wireframe: https://miro.com/app/board/uXjVOxG6NhI=/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
