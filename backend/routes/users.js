@@ -44,7 +44,7 @@ router.post("/login",(req,res)=>{
       }
   })
 });
-router.post("/add",(req,res)=>{
+router.post("/user/add",(req,res)=>{
   console.log(req.body) 
   const {username,name,email,password} =req.body;
   User.findOne({email:email},(err,user)=>{

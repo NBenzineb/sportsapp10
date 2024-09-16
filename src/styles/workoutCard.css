@@ -1,52 +1,79 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
 img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 40%;
+  max-height: 50%;
   border-radius: 2vh;
 }
 
 .exerciseList {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: -5%;
+  display: inline-block;
+  text-align: center; 
 }
 
+
 li {
-  color: darkgrey;
-  text-align: left;
+  color: white;
   padding: 0.3vh;
   white-space: pre;
+  font-weight: bolder;
+  display:inline-block;
+  
 }
 
 .card {
-  border: 4px solid rgb(107, 107, 107);
+  border: 4px solid rgb(16, 10, 10);
   border-radius: 5vh;
-  margin: 5vh;
-  padding: 2vh;
-  background-color: rgb(140, 48, 140);
+  margin: 5vh;            
+  padding: 0.3vh;
+  background-color: #040d2569;
+  color:#ffffff;
+  box-shadow: 10px 15px 40px #0848df69;
   overflow: hidden;
+ 
+ 
 }
 
-button {
+/* button {
   color: rgb(102, 59, 143);
   background-color: black;
   float: right;
   border-radius: 20%;
   margin-right: 5%;
-}
+} */
 
+/* little images */
 .logoHolder {
   width: 30%;
-  height: 100%;
-  padding: 2%;
-  float: left;
+  height: 30%;
+  padding: 0%;
 }
 
 .listHolder {
-  width: 60%;
+  width: 40%;
   padding: 3%;
   overflow: hidden;
 }
 
-h2 {
-  margin: 0;
-}
+/* .h2 {
+  text-align: center;
+	font-family:'Lato';
+	width: 600px;
+	position: absolute;
+  left: 100%;
+	top: 55%;
+	transform: translate(-50%,-55%);
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+} */
+/* h3{
+  font-size: small;
+ 
+
+} */
+
+

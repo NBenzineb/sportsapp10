@@ -6,7 +6,7 @@ body{
     background-color: hwb(252 4% 51%);
     font-family: 'Lato', sans-serif;
     width:100%;
-    height:768px;
+    height:868px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +31,7 @@ input{
     outline: none;
     border: none; 
 }
-
+/* 
 h2{
     text-align: center;
 	font-family:'Lato';
@@ -42,11 +42,11 @@ h2{
 	transform: translate(-50%,-55%);
     color: #ffffff;
     font-weight: bold;
-    font-size: 5.2rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     
 
-}
+} */
  
 nav.active{
 	box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.157);
@@ -62,7 +62,7 @@ nav ul{
 	box-shadow: 5px 10px 30px #2d65ea69;
 	transition: all ease 0.2s;
 }
-h3{
+/* h3{
     text-align: center;
 	font-family:'Lato';
 	width: 600px;
@@ -74,5 +74,5 @@ h3{
     font-weight: bold;
     font-size: 5.2rem;
     letter-spacing: 2px;
-}
+} */
 

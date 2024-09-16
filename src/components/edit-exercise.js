@@ -5,6 +5,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { render } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
+import  "../styles/edit-exercise.css"; 
+
 
 
 const EditExercise = (props) => {
@@ -123,7 +125,7 @@ const EditExercise = (props) => {
           </select>
         </div>
         <div className="form-group">
-          <label>Description: </label>
+          <label>Description:</label>
           <input
             type="text"
             name="description"
